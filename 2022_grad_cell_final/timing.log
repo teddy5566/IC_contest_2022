@@ -1,0 +1,64 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : JAM
+Version: P-2019.03
+Date   : Wed Mar 30 16:55:12 2022
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: n_reg[1] (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: compare_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  JAM                tsmc13_wl10           slow
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  n_reg[1]/CK (DFFQX1)                     0.00       0.50 r
+  n_reg[1]/Q (DFFQX1)                      0.31       0.81 f
+  U667/Y (CLKBUFX3)                        0.61       1.42 f
+  U654/Y (NOR2X2)                          0.35       1.77 r
+  U709/Y (AO21X2)                          0.21       1.98 r
+  U742/Y (XOR2X1)                          0.45       2.43 r
+  U715/Y (INVX3)                           0.53       2.96 f
+  U1245/Y (NOR2X1)                         0.91       3.87 r
+  U777/Y (AO22XL)                          0.43       4.30 r
+  U1252/Y (AOI221XL)                       0.21       4.52 f
+  U737/Y (OAI22X1)                         0.72       5.24 r
+  U865/Y (XOR2XL)                          0.66       5.90 r
+  U760/Y (XOR2XL)                          0.85       6.75 r
+  U1052/Y (OAI21XL)                        0.36       7.11 f
+  U1050/Y (OAI31X1)                        0.64       7.75 r
+  U712/Y (CLKINVX1)                        0.60       8.35 f
+  U727/Y (AO22X1)                          0.48       8.83 f
+  U740/Y (AOI221XL)                        0.59       9.42 r
+  U771/Y (INVX1)                           0.19       9.61 f
+  compare_reg[0]/D (EDFFTRX1)              0.00       9.61 f
+  data arrival time                                   9.61
+
+  clock CLK (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.50      10.50
+  clock uncertainty                       -0.10      10.40
+  compare_reg[0]/CK (EDFFTRX1)             0.00      10.40 r
+  library setup time                      -0.69       9.71
+  data required time                                  9.71
+  -----------------------------------------------------------
+  data required time                                  9.71
+  data arrival time                                  -9.61
+  -----------------------------------------------------------
+  slack (MET)                                         0.09
+
+
+1
